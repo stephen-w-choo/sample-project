@@ -5,17 +5,17 @@ import os
 
 app = Flask(__name__)
 
-@app.route("/accounts", methods=["GET", "POST"])
-def accounts():
+@app.route("/accounts/<user_id>", methods=["GET", "POST"])
+def accounts(user_id):
     # assume there has been some kind of authentication and authorisation and user variable is stored in a session
     if request.method == "GET":
-        db = sqlite3.connect("ledger.db")
+        db = sqlite3.connect("../db/ledger.db")
         db.row_factory = sqlite3.Row
         cursor = db.cursor()
 
         # assume that the user variable has been obtained from a session instance once the user is logged in
-        user = 1 # for the purpose of this exercise we'll assume a user_id of 0 as that's what I've seeded the database with
-        cursor.execute("SELECT * FROM accounts WHERE user_id = ?", (user, ))
+        # for the purpose of this exercise we'll assume a user_id of 1 as that's what I've seeded the database with
+        cursor.execute("SELECT * FROM accounts WHERE user_id = ?", (user_id, ))
         result = {
             "accounts": [dict(row) for row in cursor.fetchall()]
             }
@@ -26,7 +26,7 @@ def accounts():
 def transactions(account_id):
     # assume there has been some kind of authentication/authorisation
     if request.method == "GET":
-        db = sqlite3.connect("ledger.db")
+        db = sqlite3.connect("../db/ledger.db")
         db.row_factory = sqlite3.Row
         cursor = db.cursor()
 
