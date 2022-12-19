@@ -4,7 +4,7 @@ sample-project
 ## What is this?
 A sample project made for a coding assessment.
 
-As I've interpreted it, the task is asking for a backend with just two endpoints that return a list of accounts and transactions. It has given some sample data to be used for the account and transactions.
+As I've interpreted it, the specification is asking for a backend only (with no frontend). There are meant to be just two endpoints that return a list of accounts and transactions. The specification provides some sample data to be used for the account and transactions.
 
 I made an initial prototype with a Flask backend connected to an embedded SQLite3 database due to comfort with the Flask framework. I then rewrote it in Express/Node, connected to the same SQLite3 database, as the issuer of the assessment requested it in Node. I'm very new to Node, so I'm still very unsure about general coding conventions for Express/Node - please forgive me if it looks excessively messy. 
 
