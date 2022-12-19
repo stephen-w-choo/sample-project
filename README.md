@@ -8,9 +8,9 @@ As I've interpreted it, the task is asking for a backend with just two endpoints
 
 I made an initial prototype with a Flask backend connected to an embedded SQLite3 database due to comfort with the Flask framework. I then rewrote it in Express/Node, connected to the same SQLite3 database, as the issuer of the assessment requested it in Node. I'm very new to Node, so I'm still very unsure about general coding conventions for Express/Node - please forgive me if it looks excessively messy. 
 
-To use the Flask backend: navigate to python-backend and type 'flask run' in the terminal
+To use the Flask backend: install Flask via Pip or other manager of your choice, navigate to python-backend and type 'flask run' in the terminal. Server will run on 127.0.0.1:5000.
 
-To use Express backend: navigate to node-backend and type 'npm start'
+To use Express backend: navigate to node-backend, and type npm install followed by npm start and type 'npm start'. Server will run on localhost:3000
 
 The local server will have two endpoints: '/accounts/<user_id>' which will return all of the user's accounts in json format, and '/transactions/<account_id>' which will return all of the transactions for a given account, also as a json.
 
