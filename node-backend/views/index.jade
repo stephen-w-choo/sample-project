@@ -1,0 +1,19 @@
+extends layout
+
+block content
+  h1 Sample assessment
+  p.
+    The sample application being requested by the candidate to build the backend REST APIs
+    needed to support a web application to that allows a user to view accounts and
+    subsequently view transactions on any of the accounts they hold.
+
+  p Required functionality
+  ul
+    li View account list
+    li View account transactions
+
+  p How to use:
+  ul
+    li Visit accounts/1 to see account details owned by user 1 (only one user has been seeded into the database)
+    li Visit transactions/:accounts_id eg transactions/585309209 to see transactions for a specific account
+    li Only raw json is returned, as per the specifications of having a backend REST API
